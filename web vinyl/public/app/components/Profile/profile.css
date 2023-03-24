@@ -1,0 +1,36 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.imgs{
+    border-radius: 6px;
+    height: 80px;
+    width: 80px;
+}
+
+.carousel{
+    white-space:  nowrap;
+    background-color:rgba(0,0,0,0.6);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+padding-bottom: 10px;
+font-family: Arial, Helvetica, sans-serif;
+
+
+
+}
+
+.wrapper{
+    width: 250px;
+    height: 350px;
+    color: white;
+}
+
+.profile-container{
+    display: flex;
+}
