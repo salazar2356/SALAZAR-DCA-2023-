@@ -12,9 +12,11 @@ class MyNav extends HTMLElement {
     render() {
         if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
-                <my-nav>
 
                 <link rel="stylesheet" href="./app/components/Nav/nav.css">
+
+            <my-nav>
+
 
 
                 <div class="nav">
@@ -30,7 +32,7 @@ class MyNav extends HTMLElement {
 
                     </ul>
                 </div>
-                </my-nav>
+            </my-nav>
                 
                 `;
             }

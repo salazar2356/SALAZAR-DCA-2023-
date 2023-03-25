@@ -1,0 +1,12 @@
+body{
+    background-image: url(../public/bck.jpg);
+    background-size: inherit;
+}
+
+.prof-sec{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}

@@ -1,9 +1,10 @@
 import data from "./data.js";
 import  "./components/index.js";
-import MyNav from "./components/Nav/nav.js";
+//import MyNav, {myNavAtt} from "./components/Nav/nav.js";
 import MyProfile, { Attribute } from "./components/Profile/profile.js";
 class AppContainer extends HTMLElement {
     profiles: MyProfile[] = [];
+   // nav: MyNav;
 
     constructor() {
         super();
@@ -19,7 +20,13 @@ class AppContainer extends HTMLElement {
                 profileCard.addEventListener("click", () => console.log(user.tittle));
                 this.profiles.push(profileCard);
             });
+
+       // const navbar = this.ownerDocument.createElement("my-nav") as MyNav;
+         //   navbutt.setAttribute(myNavAtt.name, "holi")
+           // navbutt.setAttribute(myNavAtt.title, "bailas?")
+            //this.nav=navbar
         }
+
         
         connectedCallback() {
             this.render();
@@ -27,29 +34,23 @@ class AppContainer extends HTMLElement {
 
         render() {
             if (this.shadowRoot) {
-                const wrapper = this.ownerDocument.createElement("div")
-                const wrappercarousel = this.ownerDocument.createElement("div")
-                const styles = this.ownerDocument.createElement("link")
-
-            styles.setAttribute("rel","stylesheet")
-            styles.setAttribute("href","./app/components/Profile/profile.css")
-            wrapper.setAttribute("class","./app/components/Profile/profile.css")
-            styles.setAttribute("href","./app/components/Profile/profile.css")
-
-            wrapper.classList.add("wrapper")
-            wrappercarousel.classList.add("carousel")
-
-            wrapper.appendChild(wrappercarousel)
-            wrappercarousel.appendChild(profileCard)
-
-                this.shadowRoot.innerHTML+= 
-                `
-                
-                <my-nav></my-nav>
+                this.shadowRoot.innerHTML = `<link rel="stylesheet" href="../app/index.css">
                 `;
+                // this.profiles.forEach((profile) => {
+                // this.shadowRoot?.appendChild(profile);
+                // });   
+
+               // const navBarSec = this.ownerDocument.createElement("section")
+                //navBarSec.appendChild(this.nav)
+                //this.shadowRoot.appendChild(navBarSec)
+
+                const profileSec = this.ownerDocument.createElement("section")
+                profileSec.className="prof-sec"
                 this.profiles.forEach((profile) => {
-                this.shadowRoot?.appendChild(profile);
-                });   
+                    profileSec.appendChild(profile);
+                    });   
+                this.shadowRoot.appendChild(profileSec)
+
 
             }  
         } 
