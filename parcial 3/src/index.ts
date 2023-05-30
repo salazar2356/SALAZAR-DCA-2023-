@@ -1,8 +1,8 @@
 import './screens/export';
 import './components/export'
-import {addObserver, appState} from "./Strore/index"
+import {addObserver, appState, dispatch} from "./Strore/index"
 import { Screens } from "./Types/types";
-
+import { getProduct } from './Strore/actions';
 
 class AppContainer extends HTMLElement {
 
@@ -12,7 +12,8 @@ class AppContainer extends HTMLElement {
         addObserver(this)
     }
 
-    connectedCallback() {
+    async connectedCallback() {
+        dispatch (await getProduct())
         this.render();
     }
 
